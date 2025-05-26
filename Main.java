@@ -45,7 +45,7 @@ public class Main {
 
             for (MainStore store : stores) {
                 Double price = store.getPrice(product, targetCurrency);
-                if (price != null || price < minPrice) {
+                if (price != null && (minPrice == null || price < minPrice)) {
                     minPrice = price;
                     minStore = store;
                 }
